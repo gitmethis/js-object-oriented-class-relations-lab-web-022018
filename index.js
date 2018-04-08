@@ -16,21 +16,10 @@ class Driver{
   }
   
   passengers(){
-    let tripObjects = this.trips()
-    let passengers = []
-    
-    // return store.passengers.filter((passenger)=>{
-    //   for(const trip in tripObjects){
-    //       if trip.passengerId == passenger.
-    //   }
-    // })
-    console.log('this is trip info' + JSON.stringify(tripObjects))
-    let returned = store.passengers.filter((passenger)=>{
-      console.log(`The passengerId: ${passengerId} and the trip passengerId: ${tripObjects[0].passengerId}`)
-      return passenger.id == tripObjects.passengerId
-    })
-    
-    console.log('this is the returned' + JSON.stringify(returned))
+   return this.trips().map(trip => {
+      return trip.passenger();
+    });
+  
   }
 }
 
